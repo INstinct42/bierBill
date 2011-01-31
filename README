@@ -1,5 +1,35 @@
-blubb
+Grundkonzept
 
-Test23
+Objekte: user, payment, bill
+- für jedes Objekt wird eine Klasse entsprechend dem DB-Modell modelliert
+- DB-Modell kann bei Bedarf auch entsprechend angepasst werden
+- jeder ist für eines der drei Objekte verantwortlich
 
-noch einer
+Schnittstellen:
+- benötige Schnittstellen werden übers wiki diskutiert und vom Verantwortlichen implementiert
+- Schnittstellen sollen in der Regel über IDs laufen und möglichst abstrakt sein
+- zu Beginn sollen nur Grundfunktionalitäten implementiert werden, Schnittstellen die z.b. für fany-eye-candy benötigt würde kommen auf die Halde
+
+
+user
+- 2 Tabellen, a) main data, b) additional informations
+- identifiziert über ID
+
+payment
+- zwischen 2 Usern
+- aber unidirektional (A->Z)
+- insgesamt n-zu-n Beziehungen
+- negative Zahlungen möglich, aber nur zur internen Verrechnung (siehe Klasse bill)
+
+bill (abgeleitet von payments)
+* muss nicht unbedingt echt abgeleitet sein, sondern eben eine Rechnung auf n (negative) payments umwandeln
+- unidirektionale1-zu-n Beziehung A->X,Y,Z
+- Rechnung von A an X, Y, Z entspricht je einer negativen Zahlung von A->X, A->Y, A->Z mit entsprechendem Betrag
+- bild-upload (file-upload klasse extra implementieren bzw. im Netzt suchen bzw. moritz fragen)
+
+
+
+Confirment-System
+- Jeder Zahlungsempfang / in Rechnungsstellung muss von der Gegenseite bestätigt werden, bevor sie in die Kontoführung mit einbezogen wird (bzw. evtl 2 Kontostände)
+- Die  Bestätigung kann jederzeit widerrufen werden
+- Der Zahler (einer Zahlung, einer Rechnung) kann Daten nur ändern und/oder einen Auftrag löschen wenn der Auftrag von der Gegenseite nicht bestätigt wurde
