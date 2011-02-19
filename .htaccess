@@ -1,5 +1,5 @@
 RewriteEngine On
-RewriteBase /iBill/
+RewriteBase /bierBill/
 
 # x.html => ?go=x
 RewriteRule ^(.+).html$ index.php?go=$1 [QSA,L]

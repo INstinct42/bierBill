@@ -1,9 +1,9 @@
 <?php
 // Datenbank Login Variablen
 $dbc['host'] = "localhost"; // Server
-$dbc['user'] = "ibill"; // Benutzer
-$dbc['pass'] = "ibill"; // Passwort
-$dbc['data'] = "ibill"; // Datenbank
+$dbc['user'] = "bierbill"; // Benutzer
+$dbc['pass'] = "lot2u8xf6m"; // Passwort
+$dbc['data'] = "bierbill"; // Datenbank
 $dbc['pref'] = ""; // Tabellen-Präfix (erlaubt mehrere Scripte in einer DB, die sonst evtl. gleiche Tabellennamen hätten)
 
 

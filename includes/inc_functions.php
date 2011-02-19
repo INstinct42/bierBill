@@ -316,33 +316,6 @@ function getTimetableHTML ( $RUNNING_IDS, $ADMIN = FALSE ) {
     return(string) $theTemplate;
 }
 
-// Ermittelt alle Daten einer Kino-Woche
-function getWeekData ( $KINO_WEEK ) {
-
-    // Wochendaten ermitteln
-    for ( $i=0; $i<=6; $i++ ) { // Alle Spieltage durchgehen
-        $real_week = $KINO_WEEK;
-        makeRealWeek ( &$real_week, $i ); // Falls Tag Mo,Di,Mi => aus Kino-Woche normale Kalender Woche zu machen
-        $timestamps[$i] = timeFromYWD ( date ( "Y" ), $real_week, $i ); // Timestamp ermitteln
-        $dates[$i] = date ( "j.n.y", $timestamps[$i] ); // Ausgabe formatieren ermitteln
-    }
-    
-    return array ( $timestamps, $dates );
-}
-
-// Macht aus einer Kino Woche eine normale Woche
-function makeRealWeek ( &$KINO_WEEK, $DAY ) {
-    if ( $DAY >= 1 && $DAY <= 3 ){
-        $KINO_WEEK++; // Falls Tag Mo,Di,Mi => aus Kino-Woche normale Kalender Woche machen
-    }
-}
-// Macht aus einer normale Woche eine Kino Woche
-function makeKinoWeek ( &$REAL_WEEK, $DAY ) {
-    if ( $DAY >= 1 && $DAY <= 3 ){
-        $REAL_WEEK--; // Falls Tag Mo,Di,Mi => aus normale Kalender Woche eine Kino-Woche machen
-    }
-}
-
 // Verzeichnis nach Dateien mit bestimmter Endung durchsuchen
 function scandirExtension ( $FOLDER, $FILE_EXT ) {
     $files = scandir ( $FOLDER ); // Datei-Liste laden
@@ -377,17 +350,6 @@ function unquote ( $CONTENT ) {
     return $CONTENT;
 }
 
-// Berechnet einen Timestamp aus den Angaben Jahr, Kalenderwoche, Wochentag-Nummer
-function timeFromYWD ( $Y, $W, $D ) {
-    $first_in_year = mktime ( 12, 0, 0, 1, 1, $Y ); // Gehe aus vom 1.1. des Jahres aus (Mittags um evtl. Sommerzeit Probleme zu umgehen)
-    $timestamp = $first_in_year + 60*60*24*7*$W; // Addiere die Wochen hinzu
-    
-    $first_in_year_n = date ( "N", $first_in_year ); // ausgleichen, dass 1.1. nicht immer Montag ist
-    $timestamp = $timestamp - 60*60*24*($first_in_year_n-1); // entsprechende Stundenzahl abziehen
-    $D = ( $D == 0 ) ? 7 : $D; // Falls der angegebene Tag ein als 0 dargestellter Sonntag ist => setze Sonntag = 7
-    $timestamp = $timestamp + 60*60*24*($D-1); // die in der Woche vergangenen Tage wirder dazu addieren
-    return $timestamp;
-}
 
 // formatiert einen Zeitstring um
 function strtotimestr ( $FORMAT, $TIMESTR ) {
