@@ -30,7 +30,7 @@ $(document).ready(function(){
     });
 
     // Die Formular-Validierung initialisieren
-    $("#reservationform").validator({ lang: 'de' });
+    $("#newuser").validator({ lang: 'de' });
 
 
     //--------------------------------

@@ -6,14 +6,14 @@
 
             <div id="header">
                 <h1>
-                    <a href="?go=start" title="zur Startseite">
+                    <a href="start.html" title="zur Startseite">
                         iBill - Abrechnung leicht gemacht
                     </a>
                 </h1>
             </div>
 
             <div id="menu_left">
-                {..menu1..}
+                {..menu..}
             </div>
 
             <div id="content">
@@ -24,7 +24,7 @@
 
             <div id="footer" class="center">
                 <span class="small">
-                    &copy; 2010 - iBill-Systems - <a href="?go=admin">Impressum</a>
+                    &copy; 2010 - iBill-Systems - <a href="admin.html">Impressum</a>
                 </span>
             </div>
 
@@ -46,7 +46,7 @@
 					</li>
 					<li>
 						<p>
-							<button class="pointer" type="submit">Anmelden</button>
+							<button class="pointer" type="submit" name="login" value="1">Anmelden</button>
 						</p>
 					</li>
 				</ul>
@@ -65,30 +65,30 @@
                 <li><a href="dash.html">Dashboard</a></li>
                 <li><a href="account.html">Kontostand</a></li>
                 <li><a href="bills.html">Rechnungen</a></li>
-                <li><a href="payments.php">Zahlungen</a></li>
+                <li><a href="payments.html">Zahlungen</a></li>
             </ul>
             <h4>Account</h4>
             <ul>
                 <li><a href="settings.html">Profil/Einstellungen</a></li>
-                <li><a href="email.html">E-Mail ‰ndern</a></li>
-                <li><a href="password.html">Passwort ‰ndern</a></li>
+                <li><a href="email.html">E-Mail √§ndern</a></li>
+                <li><a href="password.html">Passwort √§ndern</a></li>
                 <li><a href="logout.html">Logout</a></li>
             </ul>
 <!--section-end::MENU2-->
 
 <!--section-start::START-->
 <h2>Herzlich Willkommen ...</h2>
-<h3>... im High Noon Kino T¸bingen</h3>
+<h3>... im High Noon Kino T√ºbingen</h3>
 <p>
-    Auf dieser Internetseite pr‰sentieren wir Ihnen unser Programm und unser Kino. Viel Spaﬂ!
+    Auf dieser Internetseite pr√§sentieren wir Ihnen unser Programm und unser Kino. Viel Spa√ü!
 </p>
 <p>
     <a href="?go=programm">Jetzt im Kino</a><br>
-    <a href="?go=vorschau">Demn‰chst im Kino</a><br>
+    <a href="?go=vorschau">Demn√§chst im Kino</a><br>
     <a href="?go=reservierung">Online-Reservierung</a><br>
     <a href="?go=saal">Der Saal</a><br>
     <a href="?go=preise">Preise</a><br>
 </p>
-<h3>Zurzeit l‰uft unter anderem dieser Film:</h3>
+<h3>Zurzeit l√§uft unter anderem dieser Film:</h3>
 {..movie..}
 <!--section-end::START-->

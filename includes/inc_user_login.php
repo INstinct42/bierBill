@@ -2,7 +2,7 @@
 
 // Login abfangen
 if ( $_POST['login'] == 1 ) {
-    login ( $_POST['user'], $_POST['pass'] );
+    login ($_POST['user'], $_POST['pass']);
 }
 
 // Logout abfangen
@@ -25,7 +25,11 @@ function login ( $login_name, $password ) {
 
     // Wenn ja => Session setzen
     if ( $sql->wasGetSuccessful ( $login_data  ) ) {
-        $_SESSION["login"] = "ok";
+        $_SESSION['login'] = "ok";
+        $_SESSION['id'] = (integer) $login_data;
+
+        $um = new UserMapper();
+        $_SESSION['me'] = $um->getById($login_data);
         return TRUE;
     } else {
         logout();

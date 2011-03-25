@@ -218,7 +218,7 @@ class SQL {
     // Funktion die prüft ob eine getData-Abfrage im umgangsprachlichen Sinne erfolgreich war, d.h. dass Sie min. ein Ergebnis liefert und keinen Fehler
     // Könnte man natürlich auch als "normale" Funktion in die inc_functions.php ausgliedern, passt m.M.n. aber thematisch besser hierzu
     public function wasGetSuccessful ( $DATA_RETRUN, $ZERO_ROWS_IS_OK = FALSE ) {
-        return ( $DATA_RETRUN != FALSE && ( $DATA_RETRUN != 0 | $ZERO_ROWS_IS_OK ) ); // Das übergebene Daten-Packet darf eben nicht == 0 oder == FALSE sein
+        return ( $DATA_RETRUN != FALSE && ( $DATA_RETRUN != 0 || $ZERO_ROWS_IS_OK ) ); // Das übergebene Daten-Packet darf eben nicht == 0 oder == FALSE sein
         // Eine Erweiterung der Funktion bietet der Parameter $ZERO_ROWS_IS_OK, mit dem man ein "leeres" Ergebnis eben doch als "ok" akzeptieren kann
     }
 

@@ -24,7 +24,7 @@ function getMainTemplate () {
                 <meta name="Revisit-after" content="3 days">
                 
                 <meta http-equiv="content-language" content="'.$settings['language'].'">
-                <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
                 
                 <meta name="DC.Title" content="'.$template_title.'">
                 <meta name="DC.Description" content="'.$settings['description'].'">
@@ -155,7 +155,7 @@ function getGoTo ( $GO ) {
     // write $goto into $global_config_arr['goto']
     $settings['goto'] = $GO;
 }
-
+/*
 // HTML Ausgabe eines Films Laden
 function getMovieHTML ( $ID, $MINI = FALSE ) {
     global $sql;
@@ -315,7 +315,7 @@ function getTimetableHTML ( $RUNNING_IDS, $ADMIN = FALSE ) {
     // HTML zurückgeben
     return(string) $theTemplate;
 }
-
+*/
 // Verzeichnis nach Dateien mit bestimmter Endung durchsuchen
 function scandirExtension ( $FOLDER, $FILE_EXT ) {
     $files = scandir ( $FOLDER ); // Datei-Liste laden

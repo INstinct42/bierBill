@@ -4,7 +4,7 @@ require_once ( INC_PATH . "inc_user_login.php" );
 
 // Logout-Nachricht anzeigen
 // Template laden
-$theTemplate = new Template ( "logout.tpl" );
+$theTemplate = new Template ( "user.tpl" );
 $theTemplate->load ( "LOGOUT" );
 echo $theTemplate;
 

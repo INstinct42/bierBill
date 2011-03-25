@@ -10,7 +10,7 @@ if ( $_SESSION["login"] == "ok" ) {
 // Sonst Login-Formular ausgeben
 } else {
     // Template laden
-    $theTemplate = new Template ( "admin.tpl" );
+    $theTemplate = new Template ( "user.tpl" );
     
     if ( isset ( $_POST['login'] ) ) {
         // Fehler-Template laden
