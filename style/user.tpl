@@ -32,6 +32,6 @@
     Sie sind nun wieder ausgeloggt.
 </p>
 <p>
-    <a href="login.html">zurück zum Login</a>
+    <a href="login.html">zurÃ¼ck zum Login</a>
 </p>
 <!--section-end::LOGOUT-->

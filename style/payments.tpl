@@ -9,8 +9,37 @@
     <label for="desc">Beschreibung:</label><br>
     <textarea id="desc" name="desc" type="text" rows="5" cols="55"></textarea>
 </form>
-
 <!--section-end::ADD-->
+
+<!--section-start::HISTORY-->
+<h3>Zahlungs-History</h3>
+<table width="100%">
+    <tr class="left">
+        <th>Datum</th><th>von</th><th>an</th><th>Betrag</th><th>Status</th><th>Aktionen</th>
+    </tr>
+    {..lines..}           
+</table>
+<!--section-end::HISTORY-->
+<!--section-start::HISTORY_LINE-->   
+    <tr>
+        <td>{..date..}</td><td>{..from..}</td><td>{..to..}</td><td class="right" style="color:green;">{..amount..}&nbsp;€</td><td>{..state..}</td><td>{..actions..}</td>
+    </tr>
+<!--section-end::HISTORY_LINE-->
+
+<!--section-start::INCOMING-->
+<h3>Neu erhaltene Zahlungen</h3>
+<table width="100%">
+    <tr class="left">
+        <th>Datum</th><th>Geber</th><th>Betrag</th><th>Aktionen</th>
+    </tr>
+    {..lines..}           
+</table>
+<!--section-end::INCOMING-->
+<!--section-start::INCOMING_LINE-->   
+    <tr>
+        <td>{..date..}</td><td>{..from..}</td><td class="right" style="color:green;">{..amount..}&nbsp;€</td><td>{..actions..}</td>
+    </tr>
+<!--section-end::INCOMING_LINE-->
 
 <!--section-start::ALL-->
 
@@ -46,50 +75,7 @@
 </td></tr></table>
 
 {..add..}
-
-
-<table width="100%"><tr valign="top"><td>
-    <h3>Eingang</h3>
-    <table>
-        <tr>
-            <th>Geber</th><th>Betrag (in €)</th><th></th>
-        </tr>       
-        <tr>
-            <td>Thomas</td><td>33,01</td><td><button>bestätigen</button></td>
-        </tr>       
-        <tr>
-            <td>Simon</td><td>12,42</td><td><button>bestätigen</button></td>
-        </tr>        
-        <tr>
-            <td>Jonas</td><td>42,42</td><td><button>bestätigen</button></td>
-        </tr>     
-    </table>
-</td><td>
-    <h3>Ausgang</h3>
-    <table>
-        <tr>
-            <th>Empfänger</th><th>Betrag (in €)</th>
-        </tr>       
-        <tr>
-            <td>Hans</td><td>33,01</td>
-        </tr>       
-        <tr>
-            <td>Jürgen</td><td>12,42</td>
-        </tr>            
-    </table>
-</td></tr></table>
-
-<h3>Zahlungs-History</h3>
-    <table>
-        <tr>
-            <th>Datum</th><th>von</th><th>an</th><th>Betrag (in €)</th><th>Status</th><th>Aktionen</th>
-        </tr>       
-        <tr>
-            <td>01.01.2011</td><td>Thomas</td><td>Sie</td><td style="color:green;">33,01</td><td>unbestätigt</td><td><button>Jetzt bestätigen</button></td>
-        </tr>       
-        <tr>
-            <td>01.01.2011</td><td>Ihnen</td><td>Hans</td><td style="color:red;">33,01</td><td>unbestätigt</td><td><button>Bestätigung anfordern</button></td>
-        </tr>           
-    </table>
+{..incoming..}
+{..history..}
 
 <!--section-end::ALL-->
